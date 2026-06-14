@@ -80,14 +80,13 @@ jobs:
           aws-region: "eu-west-1"
 
       - name: Initialize Packer
-
-        run: packer init packer/aws-ubuntu.pkr.hcl
+        run: packer init packer/
 
       - name: Validate Packer template
-        run: packer validate -var-file="$VAR_FILE" packer/aws-ubuntu.pkr.hcl
+        run: packer validate -var-file="$VAR_FILE" packer/
 
       - name: Format Packer template
-        run: packer fmt packer/aws-ubuntu.pkr.hcl
+        run: packer fmt packer/
 
       - name: Build AMI with Packer
-        run: packer build -var-file="$VAR_FILE" packer/aws-ubuntu.pkr.hcl
+        run: packer build -var-file="$VAR_FILE" packer/
