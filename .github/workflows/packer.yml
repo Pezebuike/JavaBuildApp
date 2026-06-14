@@ -6,18 +6,18 @@ on:
       environment:
         description: "Target environment to build for"
         required: true
-        default: "dev"
+        default: ""
         type: choice
         options:
           - dev
           - qa
           - prod
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+  # push:
+  #   branches:
+  #     - main
+  # pull_request:
+  #   branches:
+  #     - main
 
 jobs:
   resolve-environment:
